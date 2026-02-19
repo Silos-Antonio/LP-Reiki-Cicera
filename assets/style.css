@@ -1,0 +1,882 @@
+body {
+    margin: 0;
+    border: 0;
+    background-image: url(images/imagem-fundo.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Configuração Geral da Seção */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    margin: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 10%;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px #92fbff;
+    background: linear-gradient(135deg, #ffb5f9 0%, #ebedee 50%, #ecbdff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container que divide o texto da foto */
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    /*No celular a foto vá para baixo */
+}
+
+/* O Bloco de Texto com Efeito de Vidro */
+.hero-textos {
+    flex: 1;
+    min-width: 300px;
+    padding: 40px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.headline {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: #4a4a4a;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.subheadline {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+/* Botão de Contato */
+.btn-contato {
+    position: relative;
+    overflow: hidden;
+    background: #a8dadc;
+    color: #1d3557;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulseButton 2.0 infinite;
+    box-shadow: 0 4px 15px rgba(168, 218, 220, 0.6);
+    text-decoration: none;
+}
+
+.btn-contato:hover {
+    transform: translateY(18px);
+    box-shadow: 0 6px 20px #92fbff;
+}
+
+/* Estilização da Foto e Bio */
+.hero-perfil {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-instagram {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    text-decoration: none;
+    color: #4a4a4a;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+#end-instagram {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-top: 5px;
+}
+
+.btn-instagram:hover {
+    color: #E1306C;
+    /* Cor clássica do Instagram ao passar o mouse */
+    transform: scale(1.05);
+}
+
+.btn-instagram i {
+    font-size: 3rem;
+    ;
+    margin-bottom: -10px;
+}
+
+
+.hero-perfil img {
+    /* Resolvendo o problema de tamanho que você teve */
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border: 10px solid white;
+    box-shadow: 0 15px 35px #92fbff;
+    margin-bottom: 20px;
+}
+
+ph ph-instagram-logo .intro-bio {
+    font-style: italic;
+    color: #888;
+    max-width: 250px;
+}
+
+.servicos {
+    padding: 80px 10%;
+    text-align: center;
+    background: linear-gradient(135deg, #ffb5f9 0%, #ebedee 50%, #ecbdff 100%);
+    box-shadow: 0 15px 35px #92fbff;
+    border-radius: 15px;
+    margin: 30px;
+}
+
+.servicos-header h2 {
+    font-family: 'Poppins', sans-serif;
+    /* A fonte de autoridade */
+    font-size: 3.0rem;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}
+
+.servicos-header p {
+    color: #888;
+    margin-bottom: 50px;
+}
+
+.servicos-sub {
+    font-family: 'Poppins', sans-serif;
+    /* A fonte de autoridade */
+    font-size: 1.5rem;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}
+
+/* A Grade Mágica */
+.servicos-grid {
+    display: flex;
+    flex-direction: column;
+    /*grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));*/
+    gap: 30px;
+}
+
+/* O Card Glassmorphism */
+.servico-card1 {
+    background-image: url(images/foto-reiki.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+
+    /* 1. Troquei min-height por height fixo para a transição funcionar melhor */
+    height: 250px;
+    overflow: hidden;
+
+    /* 2. REMOVI o "transition: all" e aumentei o tempo para 0.8s */
+    /* O 0.8s vai deixar a expansão bem mais lenta e luxuosa */
+    transition:
+        height 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+        box-shadow 0.6s ease,
+        transform 0.6s ease;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.servico-card2 {
+    background-image: url(images/foto-barras.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+
+    /* 1. Troquei min-height por height fixo para a transição funcionar melhor */
+    height: 250px;
+    overflow: hidden;
+
+    /* 2. REMOVI o "transition: all" e aumentei o tempo para 0.8s */
+    /* O 0.8s vai deixar a expansão bem mais lenta e luxuosa */
+    transition:
+        height 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+        box-shadow 0.6s ease,
+        transform 0.6s ease;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.servico-card3 {
+    background-image: url(images/foto-facelift.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 250px;
+    overflow: hidden;
+    transition:
+        height 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+        box-shadow 0.9s ease,
+        transform 0.9s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.servico-texto {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    border-radius: 10px;
+    transition:
+        height 2.0s cubic-bezier(0.35, 1, 0.22, 1),
+        box-shadow 0.6s ease,
+        transform 0.8s ease;
+    transition-delay: 0.5s;
+}
+
+/* Efeito de flutuar ao passar o mouse 
+.servico-card1:hover, .servico-card2:hover, .servico-card3:hover {
+    height: 450px;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.servico-card1:hover .servico-texto, .servico-card2:hover .servico-texto, .servico-card3:hover .servico-texto {
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 1; 
+    transform: translateY(+180px);
+}*/
+
+.servico-card .icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.servico-card h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.servico-card p {
+    font-size: 1.3rem;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.saiba-mais {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.saiba-mais:hover {
+    color: #457b9d;
+}
+
+.sobre-profissional {
+    font-family: 'Poppins', sans-serif;
+    max-height: 900px;
+    color: #666;
+    position: relative;
+    min-height: 80vh;
+    margin: 35px;
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px #92fbff;
+    background: linear-gradient(135deg, #ffb5f9 0%, #ebedee 50%, #ecbdff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sobre-cabecalho {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.3rem;
+    max-height: 600px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.sobre-cabecalho img {
+    max-width: 300px;
+    max-height: 600px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.inicio-descricao {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.sobre-descricao {
+    font-family: 'Poppins', sans-serif;
+    max-height: 230px;
+    overflow: hidden;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid;
+    border-image-source: linear-gradient(45deg, #3fbfb9, #bafafc, #289eb3, #b7f9fb, #1c9aaa);
+    border-image-slice: 1;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 8px 8px 2px rgba(55, 212, 204, 0.178);
+}
+
+.subtitulo-descricao {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #555555;
+}
+
+.depoimentos {
+    font-family: 'Poppins', sans-serif;
+    max-height: 800px;
+    color: #666;
+    position: relative;
+    min-height: 80vh;
+    margin: 35px;
+    gap: 30px;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px #92fbff;
+    background: linear-gradient(135deg, #ffb5f9 0%, #ebedee 50%, #ecbdff 100%);
+}
+
+.titulo-secao {
+    font-size: 1.8rem;
+}
+
+.lista-depoimentos {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    list-style-type: none;
+}
+
+.card-depoimento {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.0rem;
+    color: #666;
+    background: rgba(177, 176, 176, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #92fbff;
+    padding: 10px;
+    min-width: 300px;
+    min-height: 300px;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.card-depoimento:hover {
+    transform: translateY(-8px);
+    cursor: grab;
+}
+
+.avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+li img {
+    border-radius: 50%;
+    max-width: 50px;
+    max-height: 50px;
+    box-shadow: 0px 5px 15px #2929299a;
+}
+
+.CTA-final {
+    font-family: 'Poppins', sans-serif;
+    max-height: 800px;
+    color: #666;
+    position: relative;
+    min-height: 40vh;
+    margin: 35px;
+    gap: 30px;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px #92fbff;
+    background: linear-gradient(135deg, #ffb5f9 0%, #ebedee 50%, #ecbdff 100%);
+}
+
+.passos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card-cta {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.0rem;
+    color: #666;
+    background: rgba(201, 201, 201, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #92fbff;
+    padding: 10px;
+    min-width: 300px;
+    transition: 0.3s;
+}
+
+.card-cta:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+.btn-contato-cta {
+    display: inline;
+    background: #a8dadc;
+    position: relative;
+    overflow: hidden;
+    color: #1d3557;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulseButton 2s ease-in-out infinite;
+    animation-play-state: paused;
+    box-shadow: 0 4px 15px rgba(168, 218, 220, 0.6);
+    text-decoration: none;
+}
+
+.btn-contato-cta:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+.faq-container {
+    font-family: 'Poppins', sans-serif;
+    max-height: 800px;
+    color: #666;
+    position: relative;
+    min-height: 80vh;
+    margin: 35px;
+    gap: 30px;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px #92fbff;
+    background: linear-gradient(135deg, #ffb5f9 0%, #ebedee 50%, #ecbdff 100%);
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.1);
+    /* Efeito Vidro */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.faq-item summary {
+    padding: 20px;
+    list-style: none;
+    /* Remove a setinha padrão do navegador */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: #2d4a4d;
+}
+
+/* Esconde a seta padrão no Chrome/Safari */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-content {
+    padding: 0 20px 20px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Estilo para quando o item estiver aberto */
+.faq-item[open] {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.faq-item[open] summary i {
+    transform: rotate(180deg);
+    /* Gira o ícone do Phosphor */
+}
+
+.footer {
+    background: rgba(255, 255, 255, 0.05);
+    /* Vidro bem sutil */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 60px 0 20px;
+    margin-top: 100px;
+    color: #333;
+    /* Ou a cor que você definiu para o texto */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    margin-bottom: 20px;
+    color: #2d4a4d;
+    /* Cor destaque para títulos */
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    font-size: 1.5rem;
+    color: #2d4a4d;
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #a8dadc;
+    /* Cor de destaque no hover */
+    transform: translateY(-3px);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    padding-left: 5px;
+    color: #a8dadc;
+}
+
+.footer-column p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Rodapé inferior (Copyright) */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.footer-bottom a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+
+    .footer-column p {
+        justify-content: center;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE GLOBAL E AJUSTES DE FLUXO
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .servicos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (hover: hover) {
+
+    .servico-card1:hover .servico-texto,
+    .servico-card2:hover .servico-texto,
+    .servico-card3:hover .servico-texto {
+        background: rgba(255, 255, 255, 0.2);
+        opacity: 1;
+        transform: translateY(20px);
+    }
+
+    .servico-card1:hover,
+    .servico-card2:hover,
+    .servico-card3:hover {
+        height: 400px;
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* ============================================================
+   RESPONSIVIDADE MOBILE (ATÉ 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Ajustes de Seções */
+    .hero,
+    .servicos,
+    .sobre-profissional,
+    .depoimentos,
+    .CTA-final,
+    .faq-container {
+        margin: 15px;
+        padding: 30px 15px;
+        min-height: auto;
+        max-height: none;
+    }
+
+    /* Hero Section */
+    .hero-container {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .hero-textos {
+        padding: 20px;
+        min-width: unset;
+    }
+
+    .headline {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .subheadline {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* Botão Centralizado no Mobile */
+    .btn-contato,
+    .btn-contato-cta {
+        display: inline-block;
+        /* Garante que o botão não ocupe a linha toda se não couber */
+        width: 100%;
+        /* Faz ele ocupar a largura do card no mobile */
+        max-width: 100%;
+        box-sizing: border-box;
+        /* Garante que o padding não "estoure" a largura */
+        padding: 15px 10px;
+        font-size: 1rem;
+        text-align: center;
+        word-wrap: break-word;
+        /* Evita que o texto saia do botão */
+    }
+
+    /* Ajuste do Card de Botão na CTA Final */
+    .card-btn-contato {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* --- CARDS DE SERVIÇO --- */
+    .servico-card1 {
+        background-image: url(images/foto-reiki-mobile.png);
+        height: auto;
+        min-height: 300px;
+        padding: 15px;
+    }
+
+    .servico-card2,
+    .servico-card3 {
+        height: auto;
+        min-height: 300px;
+        padding: 15px;
+    }
+
+    .servico-texto {
+        transform: none !important;
+        height: 100px;
+        /* Aumentado para caber título + saiba mais com folga */
+        overflow: hidden;
+        transition: height 0.5s ease;
+        background: rgba(255, 255, 255, 0.5);
+        /* Menos embaçado */
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .saiba-mais {
+        color: #1d3557 !important;
+
+        font-size: 0.9rem;
+        font-weight: bold;
+        display: block !important;
+        margin-top: -10px;
+        text-decoration: underline;
+        opacity: 1 !important;
+    }
+
+    .servico-texto p {
+        display: none;
+        opacity: 0;
+        font-size: 1rem;
+    }
+
+    .expandido .servico-texto {
+        height: 400px;
+        /* Altura suficiente para o texto */
+        overflow-y: auto;
+    }
+
+    .expandido .servico-texto p {
+        display: block;
+        opacity: 1;
+        margin-top: 15px;
+    }
+
+    /* --- OUTROS AJUSTES --- */
+    .sobre-profissional {
+        flex-direction: column;
+    }
+
+    .sobre-descricao {
+        margin: -8px;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    .lista-depoimentos {
+        gap: 10px;
+        overflow-x: auto;
+    }
+
+    .card-cta {
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+/* <--- ESSA CHAVE FECHA O MOBILE. NÃO REMOVA! */
+
+@media (max-width: 380px) {
+    .headline {
+        font-size: 1.5rem;
+    }
+
+    .btn-contato-cta {
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes pulseButton {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
