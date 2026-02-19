@@ -298,6 +298,7 @@ ph ph-instagram-logo .intro-bio {
 }
 
 .saiba-mais {
+    display: none;
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
