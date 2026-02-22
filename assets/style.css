@@ -27,10 +27,10 @@ body {
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
-    /*No celular a foto vá para baixo */
+    /*No celular a foto vai para baixo */
 }
 
-/* O Bloco de Texto com Efeito de Vidro */
+/* O Bloco de Texto */
 .hero-textos {
     flex: 1;
     min-width: 300px;
@@ -118,7 +118,6 @@ body {
 
 .btn-instagram:hover {
     color: #E1306C;
-    /* Cor clássica do Instagram ao passar o mouse */
     transform: scale(1.05);
 }
 
@@ -130,7 +129,6 @@ body {
 
 
 .hero-perfil img {
-    /* Resolvendo o problema de tamanho que você teve */
     width: 300px;
     height: 300px;
     object-fit: cover;
@@ -157,7 +155,6 @@ ph ph-instagram-logo .intro-bio {
 
 .servicos-header h2 {
     font-family: 'Poppins', sans-serif;
-    /* A fonte de autoridade */
     font-size: 3.0rem;
     color: #4a4a4a;
     margin-bottom: 10px;
@@ -170,7 +167,6 @@ ph ph-instagram-logo .intro-bio {
 
 .servicos-sub {
     font-family: 'Poppins', sans-serif;
-    /* A fonte de autoridade */
     font-size: 1.5rem;
     color: #4a4a4a;
     margin-bottom: 10px;
@@ -190,18 +186,12 @@ ph ph-instagram-logo .intro-bio {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-
-    /* 1. Troquei min-height por height fixo para a transição funcionar melhor */
     height: 250px;
     overflow: hidden;
-
-    /* 2. REMOVI o "transition: all" e aumentei o tempo para 0.8s */
-    /* O 0.8s vai deixar a expansão bem mais lenta e luxuosa */
     transition:
         height 0.5s cubic-bezier(0.19, 1, 0.22, 1),
         box-shadow 0.6s ease,
         transform 0.6s ease;
-
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 40px;
     border-radius: 20px;
@@ -213,18 +203,12 @@ ph ph-instagram-logo .intro-bio {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-
-    /* 1. Troquei min-height por height fixo para a transição funcionar melhor */
     height: 250px;
     overflow: hidden;
-
-    /* 2. REMOVI o "transition: all" e aumentei o tempo para 0.8s */
-    /* O 0.8s vai deixar a expansão bem mais lenta e luxuosa */
     transition:
         height 0.5s cubic-bezier(0.19, 1, 0.22, 1),
         box-shadow 0.6s ease,
         transform 0.6s ease;
-
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 40px;
     border-radius: 20px;
@@ -517,7 +501,6 @@ li img {
 
 .faq-item {
     background: rgba(255, 255, 255, 0.1);
-    /* Efeito Vidro */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -530,7 +513,6 @@ li img {
 .faq-item summary {
     padding: 20px;
     list-style: none;
-    /* Remove a setinha padrão do navegador */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -539,7 +521,7 @@ li img {
     color: #2d4a4d;
 }
 
-/* Esconde a seta padrão no Chrome/Safari */
+
 .faq-item summary::-webkit-details-marker {
     display: none;
 }
@@ -562,14 +544,12 @@ li img {
 
 .footer {
     background: rgba(255, 255, 255, 0.05);
-    /* Vidro bem sutil */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 60px 0 20px;
     margin-top: 100px;
     color: #333;
-    /* Ou a cor que você definiu para o texto */
 }
 
 .footer-container {
@@ -606,8 +586,7 @@ li img {
 }
 
 .footer-socials a:hover {
-    color: #a8dadc;
-    /* Cor de destaque no hover */
+    color: #a8dadc;/
     transform: translateY(-3px);
 }
 
@@ -672,10 +651,7 @@ li img {
     }
 }
 
-
-/* ============================================================
-   RESPONSIVIDADE GLOBAL E AJUSTES DE FLUXO
-   ============================================================ */
+/*RESPONSIVIDADE GLOBAL E AJUSTES DE FLUXO*/
 
 @media (max-width: 1024px) {
     .servicos-grid {
@@ -703,13 +679,9 @@ li img {
     }
 }
 
-/* ============================================================
-   RESPONSIVIDADE MOBILE (ATÉ 768px)
-   ============================================================ */
+/* RESPONSIVIDADE MOBILE (ATÉ 768px) */
 
 @media (max-width: 768px) {
-
-    /* Ajustes de Seções */
     .hero,
     .servicos,
     .sobre-profissional,
@@ -764,7 +736,7 @@ li img {
         align-items: center;
     }
 
-    /* --- CARDS DE SERVIÇO --- */
+    /* CARDS DE SERVIÇO */
     .servico-card1 {
         background-image: url(images/foto-reiki-mobile.png);
         height: auto;
@@ -782,11 +754,9 @@ li img {
     .servico-texto {
         transform: none !important;
         height: 100px;
-        /* Aumentado para caber título + saiba mais com folga */
         overflow: hidden;
         transition: height 0.5s ease;
         background: rgba(255, 255, 255, 0.5);
-        /* Menos embaçado */
         display: flex;
         flex-direction: column;
         padding: 15px;
@@ -824,7 +794,7 @@ li img {
         margin-top: 15px;
     }
 
-    /* --- OUTROS AJUSTES --- */
+    /* OUTROS AJUSTES */
     .sobre-profissional {
         flex-direction: column;
     }
@@ -846,8 +816,6 @@ li img {
     }
 
 }
-
-/* <--- ESSA CHAVE FECHA O MOBILE. NÃO REMOVA! */
 
 @media (max-width: 380px) {
     .headline {
