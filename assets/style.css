@@ -75,7 +75,7 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    animation: pulseButton 2.0 infinite;
+    animation: pulseButton 2s ease-in-out infinite;
     box-shadow: 0 4px 15px rgba(168, 218, 220, 0.6);
     text-decoration: none;
 }
@@ -479,7 +479,7 @@ li img {
 }
 
 .btn-contato-cta {
-    display: inline;
+    display: inline-block;
     background: #a8dadc;
     position: relative;
     overflow: hidden;
@@ -492,7 +492,6 @@ li img {
     cursor: pointer;
     transition: all 0.3s ease;
     animation: pulseButton 2s ease-in-out infinite;
-    animation-play-state: paused;
     box-shadow: 0 4px 15px rgba(168, 218, 220, 0.6);
     text-decoration: none;
 }
@@ -744,21 +743,16 @@ li img {
         text-align: center;
     }
 
-    /* Botão Centralizado no Mobile */
     .btn-contato,
     .btn-contato-cta {
         display: inline-block;
-        /* Garante que o botão não ocupe a linha toda se não couber */
         width: 100%;
-        /* Faz ele ocupar a largura do card no mobile */
         max-width: 100%;
         box-sizing: border-box;
-        /* Garante que o padding não "estoure" a largura */
         padding: 15px 10px;
         font-size: 1rem;
         text-align: center;
         word-wrap: break-word;
-        /* Evita que o texto saia do botão */
     }
 
     /* Ajuste do Card de Botão na CTA Final */
@@ -868,16 +862,16 @@ li img {
 @keyframes pulseButton {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 0 0 rgba(134, 225, 248, 0.514);
     }
 
     50% {
         transform: scale(1.05);
-        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0 15px 15px rgba(134, 225, 248, 0.514);
     }
 
     100% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(134, 225, 248, 0.514);
     }
 }
