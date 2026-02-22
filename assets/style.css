@@ -75,7 +75,7 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    animation: pulseButton 2.0 infinite;
+    animation: pulseButton 2s ease-in-out infinite;
     box-shadow: 0 4px 15px rgba(168, 218, 220, 0.6);
     text-decoration: none;
 }
