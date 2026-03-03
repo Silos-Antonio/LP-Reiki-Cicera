@@ -32,7 +32,9 @@ Otimizada para dispositivos móveis (mobile-first)
 Uso da Intersection Observer API para controlar animações on scroll, evitando listeners pesados e melhorando eficiência de renderização.
 
 ✔ Redução de execução contínua de eventos
+
 ✔ Melhor controle de ativação de animações
+
 ✔ Experiência mais fluida em dispositivos móveis
 
 2️⃣ Microinterações Orientadas à Conversão
